@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
 
-body {
+/* body {
     background-image: url('https://s3-us-west-2.amazonaws.com/userdata123/www/imagefields/6189/theme_form_background_image-1655979649-847-74-3796189495.jpg?=1655979651494&=1657296639287');
     background-color: #eaf5f7;
     background-size: cover;
@@ -10,9 +10,9 @@ body {
     justify-content: center;
     padding: 40px 0;
     font-family: 'Raleway', sans-serif;
-}
+} */
 
-form.container {
+form.Container {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 40px;
     width: 90%;
@@ -20,39 +20,28 @@ form.container {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
+/* 
 h1, h2 {
     font-weight: 500;
-    margin-bottom: 10px;
-}
-
+    margin-bottom: 10px; } */
+/* 
 p {
     font-weight: 200;
-    color: #333;
-}
+    color: #333;} */
 
-hr {
+ /* hr { 
     border: none;
     height: 1.5px;
     background-color: black;
-    margin: 20px 0;
-}
-
-.form-row, .form-row-address, .form-row-medical {
+    margin: 20px 0; } */
+/* 
+ .form-row, .form-row-address, .form-row-medical {
     display: flex;
     align-items: flex-start;
     gap:20px;
-    margin-bottom: 20px;
-}
+    margin-bottom: 20px;} */
 
-.form-row label, .form-row-address label, .form-row-medical label {
-    width: 180px;
-    text-align: left;
-    font-weight: 500;
-    color: #333;
-    margin-top: 8px;
-}
-
+/* 
 input[type="text"], input[type="tel"], input[type="date"], select {
     padding: 10px 12px;
     border: 1px solid #ccc;
@@ -60,15 +49,15 @@ input[type="text"], input[type="tel"], input[type="date"], select {
     background-color: rgba(0, 0, 0, 0.15);
     width: 100%;
     box-sizing: border-box;
-    font-size: 14px;
-}
+        font-size: 14px;} */
 
+/* 
 .input-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    width: 100%;
-}
+    width: 100%;} */
+/*
 .status,
 .gender
 {
@@ -81,8 +70,8 @@ input[type="text"], input[type="tel"], input[type="date"], select {
 input[type="date"].dateofbirth::-webkit-datetime-edit {
     font-weight: 400; 
     font-family: 'Raleway', sans-serif;
-    text-transform: uppercase;
-}
+    text-transform: uppercase; 
+} */
 
 
 .input-group input, .input-group select {
@@ -132,16 +121,16 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked {
+/* input[type="checkbox"]:checked {
     background-color: #333;
-}
-
+} */
+/* 
 .Register-Button {
     text-align: center;
     margin-top: 30px;
-}
+} */
 
-button.button {
+/* button.button {
     background-color: black;
     color: white;
     width: 100%;
@@ -152,4 +141,4 @@ button.button {
     font-size: 16px;
     font-weight: 600;
     transition: background-color 0.3s ease;
-}
+} */
