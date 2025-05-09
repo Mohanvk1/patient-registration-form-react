@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap');
 
-/* body {
+ body {
     background-image: url('https://s3-us-west-2.amazonaws.com/userdata123/www/imagefields/6189/theme_form_background_image-1655979649-847-74-3796189495.jpg?=1655979651494&=1657296639287');
     background-color: #eaf5f7;
     background-size: cover;
@@ -10,7 +10,7 @@
     justify-content: center;
     padding: 40px 0;
     font-family: 'Raleway', sans-serif;
-} */
+} 
 
 form.Container {
     background-color: rgba(255, 255, 255, 0.95);
@@ -49,14 +49,14 @@ input[type="text"], input[type="tel"], input[type="date"], select {
     background-color: rgba(0, 0, 0, 0.15);
     width: 100%;
     box-sizing: border-box;
-        font-size: 14px;} */
+        font-size: 14px;}  */
 
 /* 
 .input-group {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    width: 100%;} */
+    width: 100%;}  */
 /*
 .status,
 .gender
@@ -73,12 +73,12 @@ input[type="date"].dateofbirth::-webkit-datetime-edit {
     text-transform: uppercase; 
 } */
 
-
+/* 
 .input-group input, .input-group select {
     width: calc(50% - 5px);
-}
+} */
 
-.Street-Address
+/* .Street-Address
  {
     width: 100% !important;
 }
@@ -94,9 +94,9 @@ input[type="date"].dateofbirth::-webkit-datetime-edit {
     display: flex;
     align-items: center;
     gap: 8px;
-}
+} */
 
-input[type="radio"] {
+/* input[type="radio"] {
     appearance: none;
     width: 16px;
     height: 16px;
@@ -119,7 +119,7 @@ input[type="checkbox"] {
     border-radius: 2px;
     background-color:rgba(0, 0, 0, 0.15);
     cursor: pointer;
-}
+} */
 
 /* input[type="checkbox"]:checked {
     background-color: #333;
