@@ -318,7 +318,7 @@ function App() {
                         name="country"
                         defaultValue="country"
                         
-                        sx={{
+                        sx={{ width:'200px',
                           backgroundColor: '#f0f0f0',
                           borderRadius: '15px',
                           '& fieldset': {
@@ -326,7 +326,7 @@ function App() {
                           },
                           '& .MuiSelect-select': {
                             color: 'black',
-                            px: '112px',
+                            px: '50px',
                           },
                         }}
                       >
