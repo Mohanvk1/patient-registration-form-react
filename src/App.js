@@ -311,11 +311,12 @@ function App() {
                   </Grid>
                   <Grid item xs={6}>
                     <FormControl fullWidth required>
-                      <InputLabel id="country-label">Country</InputLabel>
+                      <InputLabel id="country-label"></InputLabel>
                       <Select
                         
                         id="country"
                         name="country"
+                        defaultValue="country"
                         
                         sx={{
                           backgroundColor: '#f0f0f0',
@@ -329,6 +330,7 @@ function App() {
                           },
                         }}
                       >
+                         <MenuItem value="country">country</MenuItem>
                         <MenuItem value="us">United States</MenuItem>
                         <MenuItem value="ca">Canada</MenuItem>
                         <MenuItem value="uk">United Kingdom</MenuItem>
