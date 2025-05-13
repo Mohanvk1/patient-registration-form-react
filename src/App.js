@@ -57,7 +57,7 @@ function App() {
               Thank you for applying to our practice. Please complete this patient registration form with your information, and a doctor will contact you shortly.
             </Typography>
             <hr />
-        {/* <div className="form-row"> */}
+        
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="center" spacing={2}>
               <Grid item  sm={3}>
@@ -112,8 +112,8 @@ function App() {
               </Grid>
             </Grid>
           </Box>
-        {/* </div> */}
-        {/* <div className="form-row"> */}
+        
+        
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="center" spacing={2}>
               <Grid item sm={3}>
@@ -130,8 +130,8 @@ function App() {
             </Grid>
           </Box>
 
-        {/* </div> */}
-        {/* <div className="form-row"> */}
+      
+        
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="center" spacing={2}>
               <Grid item sm={3}>
@@ -163,8 +163,8 @@ function App() {
             </Grid>
           </Box>
 
-        {/* </div> */}
-        {/* <div className="form-row"> */}
+      
+        
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="center" spacing={2}>
               <Grid item sm={3}>
@@ -197,8 +197,8 @@ function App() {
             </Grid>
           </Box>
 
-        {/* </div> */}
-        {/* <div className="form-row"> */}
+      
+      
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="center" spacing={2}>
               <Grid item sm={3}>
@@ -217,9 +217,9 @@ function App() {
             </Grid>
           </Box>
 
-        {/* </div> */}
+        
 
-        {/* <div className="form-row-address"> */}
+        
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="center" spacing={2}>
               <Grid item sm={3}>
@@ -231,19 +231,19 @@ function App() {
                   id="Address"
                   placeholder="Street Address"
                   fullWidth
-                  sx={{ mb: 2 }}
-                  sx={{
-                    '& .MuiOutlinedInput-root': {
-                      backgroundColor: '#f0f0f0', 
-                      borderRadius: '15px',
-                      '& fieldset': {
-                        border: 'none', 
-                      },
-                      '& input': {
-                        color: 'black', 
-                      },
+                sx={{
+                  mb: 2,
+               '& .MuiOutlinedInput-root': {
+                    backgroundColor: '#f0f0f0',
+                    borderRadius: '15px',
+                    '& fieldset': {
+                      border: 'none',
                     },
-                  }}
+                    '& input': {
+                      color: 'black',
+                    },
+                  },
+                }}
                   
                 />
                 <Grid container spacing={2} sx={{ mt: 2 }}>
@@ -346,9 +346,9 @@ function App() {
             </Grid>
           </Box>
 
-        {/* </div> */}
+        
 
-        {/* <div className="form-row"> */}
+        
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="center" spacing={2}>
               <Grid item sm={3}>
@@ -377,9 +377,9 @@ function App() {
               </Grid>
             </Grid>
           </Box>
-        {/* </div> */}
+        
 
-        {/* <div className="form-row-medical"> */}
+      
           <Box sx={{ mb: 3 }}>
             <Grid container alignItems="flex-start" spacing={2}>
               <Grid item sm={3}>
@@ -401,7 +401,7 @@ function App() {
             </Grid>
           </Box>
 
-        {/* </div> */}
+      
 
             <Typography variant="h6" component="h2">
               Patient/Guardian Signature*
@@ -410,12 +410,12 @@ function App() {
               According to our privacy policy and federal law, your information within this patient registration form will remain private at all times.
             </Typography>
 
-            {/* <div className="Register-Button"> */}
+          
 
               <Button type="submit" variant="contained" color="primary" fullWidth sx={{ backgroundColor: 'black', color: 'white' }}>
                 REGISTER
               </Button>
-            {/* </div>  */}
+            
       </form>
 
   );
