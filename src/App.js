@@ -46,6 +46,31 @@ const CustomCheckBox = styled(Checkbox)(({ theme }) => ({
 }));
 
 function App() {
+
+  const registerPatient = () => {
+  const patient = {
+    id: 3,
+    name: "John Doe",
+    age: 30,
+    diagnosis: "Diabetes"
+  };
+
+  fetch("http://localhost:5026/api/Patient/Register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(patient)
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log("Patient registered:", data);
+    })
+    .catch(error => {
+      console.error("Error registering patient:", error);
+    });
+};
+
     return (
 
 
@@ -414,13 +439,14 @@ function App() {
 
           
 
-              <Button type="submit" variant="contained" color="primary" fullWidth sx={{ backgroundColor: 'black', color: 'white' }}>
+              <Button type="submit" variant="contained" onClick={registerPatient}  color="primary" fullWidth sx={{ backgroundColor: 'black', color: 'white' }}>
                 REGISTER
               </Button>
             
       </form>
-
+  
   );
+
 }
 
   export default App;
