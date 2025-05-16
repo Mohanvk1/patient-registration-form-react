@@ -65,9 +65,9 @@ function App() {
   };
      patient.firstname=firstName
      patient.lastName=lastName
-      patient.DateOfBirth=DateOfBirth
+      // patient.DateOfBirth=DateOfBirth
      patient.Insurance=Insurance
-     patient.phone=phone
+    //  patient.phone=phone
      
      
   fetch("http://localhost:5026/api/Patient/Register", {
