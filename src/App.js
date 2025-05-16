@@ -58,6 +58,21 @@ function App() {
   const[state,setstate]=useState('');
   const[zipCode,setzipCode]=useState('');
   const[country,setcountry]=useState('');
+    const [gender, setGender] = useState('');
+    const[maritalStatus,setMaritalStatus]=useState('');
+    const[medicalHistory,setMedicalHistory]=useState('');
+    const handleCheckboxChange = (event) => {
+  const { value, checked } = event.target;
+
+  setMedicalHistory((prev) => {
+    const updated = checked
+      ? [...prev, value]
+      : prev.filter((item) => item !== value);
+
+    console.log("Updated medical history:", updated); 
+    return updated;
+  });
+};
   const registerPatient = () => {
    
   const patient = {
@@ -78,6 +93,9 @@ function App() {
      patient.state=state
      patient.zipCode=zipCode
      patient.country=country
+      patient.Gender=gender
+      patient.MaritalStatus=maritalStatus
+      patient.PastMedicalHistory=medicalHistory
      
      
   fetch("http://localhost:5026/api/Patient/Register", {
@@ -168,21 +186,27 @@ function App() {
           </Box>
         
         
-          <Box sx={{ mb: 3 }}>
-            <Grid container alignItems="center" spacing={2}>
-              <Grid item sm={3}>
-                <Typography variant="subtitle1">Gender</Typography>
-              </Grid>
-              <Grid item xs={12} sm={9} sx={{ pl: 25 }}>
-                <FormControl component="fieldset">
-                  <RadioGroup row name="gender">
-                    <FormControlLabel value="male" control={<CustomRadio />} label="Male" />
-                    <FormControlLabel value="female" control={<CustomRadio />} label="Female" />
-                  </RadioGroup>
-                </FormControl>
-              </Grid>
+        <Box sx={{ mb: 3 }}>
+          <Grid container alignItems="center" spacing={2}>
+            <Grid item sm={3}>
+              <Typography variant="subtitle1">Gender</Typography>
             </Grid>
-          </Box>
+            <Grid item xs={12} sm={9} sx={{ pl: 25 }}>
+              <FormControl component="fieldset">
+                <RadioGroup row name="SelectGender"
+                   value={gender}
+                  onChange={(e) => {
+                    setGender(e.target.value);
+                    console.log("Selected gender:",e.value);
+                  }} >
+                  
+                  <FormControlLabel value="male" control={<CustomRadio />} label="Male" />
+                  <FormControlLabel value="female" control={<CustomRadio />} label="Female" />
+                </RadioGroup>
+              </FormControl>
+            </Grid>
+          </Grid>
+        </Box>
 
       
         
@@ -264,7 +288,13 @@ function App() {
               </Grid>
               <Grid item xs={12} sm={9} sx={{ pl: 18 }}>
                 <FormControl component="fieldset">
-                  <RadioGroup row name="MStatus">
+                  <RadioGroup row name="MStatus"
+                                value={maritalStatus}
+                                onChange={(e)=> {
+                                  setMaritalStatus(e.target.value);
+                                  console.log("Selected maritalStatus:",e.target.value);
+                                }}>
+                  
                     <FormControlLabel value="Single" control={<CustomRadio required />} label="Single" />
                     <FormControlLabel value="Married" control={<CustomRadio />} label="Married" />
                     <FormControlLabel value="Divorced" control={<CustomRadio />} label="Divorced" />
@@ -336,6 +366,7 @@ function App() {
                       placeholder="State"
                       value={state}
                       onChange={(e)=>setstate(e.target.value)}
+                        
                       fullWidth
                       sx={{
                         '& .MuiOutlinedInput-root': {
@@ -452,26 +483,38 @@ function App() {
         
 
       
-          <Box sx={{ mb: 3 }}>
-            <Grid container alignItems="flex-start" spacing={2}>
-              <Grid item sm={3}>
-                <Typography variant="subtitle1">Past Medical History*</Typography>
-              </Grid>
-              <Grid item xs={12} sm={9} sx={{ pl: 14 }}>
-                <FormGroup>
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Anemia" />} label="Anemia" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Asthma" />} label="Asthma" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Bronchitis" />} label="Bronchitis" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Chickenpox" />} label="Chickenpox" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Diabetes" />} label="Diabetes" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Pneumonia" />} label="Pneumonia" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Thyroid Disease" />} label="Thyroid Disease" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Ulcer" />} label="Ulcer" />
-                  <FormControlLabel control={<CustomCheckBox name="medical_history" value="Other" />} label="Other" />
-                </FormGroup>
-              </Grid>
+        <Box sx={{ mb: 3 }}>
+          <Grid container alignItems="flex-start" spacing={2}>
+            <Grid item sm={3}>
+              <Typography variant="subtitle1">Past Medical History*</Typography>
             </Grid>
-          </Box>
+            <Grid item xs={12} sm={9} sx={{ pl: 14 }}>
+              <FormGroup>
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Anemia"
+                  checked={medicalHistory.includes("Anemia")}
+                  onChange={handleCheckboxChange} />} label="Anemia" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Asthma" checked={medicalHistory.includes("Asthma")}
+                  onChange={handleCheckboxChange}
+                />} label="Asthma" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Bronchitis" checked={medicalHistory.includes("Bronchitis")}
+                  onChange={handleCheckboxChange} />} label="Bronchitis" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Chickenpox"
+                  checked={medicalHistory.includes("Chickenpox")}
+                  onChange={handleCheckboxChange} />} label="Chickenpox" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Diabetes" checked={medicalHistory.includes("Diabetes")}
+                  onChange={handleCheckboxChange} />} label="Diabetes" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Pneumonia" checked={medicalHistory.includes("Pneumonia")}
+                  onChange={handleCheckboxChange} />} label="Pneumonia" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Thyroid Disease" checked={medicalHistory.includes("Thyroid Disease")}
+                  onChange={handleCheckboxChange} />} label="Thyroid Disease" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Ulcer" checked={medicalHistory.includes("Ulcer")}
+                  onChange={handleCheckboxChange} />} label="Ulcer" />
+                <FormControlLabel control={<CustomCheckBox name="medical_history" value="Other" checked={medicalHistory.includes("Other")}
+                  onChange={handleCheckboxChange} />} label="Other" />
+              </FormGroup>
+            </Grid>
+          </Grid>
+        </Box>
 
       
 
@@ -484,7 +527,7 @@ function App() {
 
           
 
-              <Button type="submit" variant="contained" onClick={registerPatient}  color="primary" fullWidth sx={{ backgroundColor: 'black', color: 'white' }}>
+              <Button type="submit" variant="contained" onClick={(e) => { e.preventDefault(); registerPatient(); }} color="primary" fullWidth sx={{ backgroundColor: 'black', color: 'white' }}>
                 REGISTER
               </Button>
             
