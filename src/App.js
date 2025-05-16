@@ -53,6 +53,11 @@ function App() {
   const [DateOfBirth,setDateOfBirth]= useState('');
   const [Insurance,setInsurance]=useState('');
   const [phone,setPhone]=useState('');
+  const[streetAddress,setstreetAddress]=useState('');
+  const[city,setcity]=useState('');
+  const[state,setstate]=useState('');
+  const[zipCode,setzipCode]=useState('');
+  const[country,setcountry]=useState('');
   const registerPatient = () => {
    
   const patient = {
@@ -65,9 +70,14 @@ function App() {
   };
      patient.firstname=firstName
      patient.lastName=lastName
-      // patient.DateOfBirth=DateOfBirth
+       patient.DateOfBirth=DateOfBirth
      patient.Insurance=Insurance
-    //  patient.phone=phone
+     patient.phone=phone
+     patient.streetAddress=streetAddress
+     patient.city=city
+     patient.state=state
+     patient.zipCode=zipCode
+     patient.country=country
      
      
   fetch("http://localhost:5026/api/Patient/Register", {
@@ -278,6 +288,8 @@ function App() {
                   required
                   id="Address"
                   placeholder="Street Address"
+                  value={streetAddress}
+                  onChange={(e)=>setstreetAddress(e.target.value)}
                   fullWidth
                 sx={{
                   mb: 2,
@@ -300,6 +312,8 @@ function App() {
                       required
                       name="city"
                       placeholder="City"
+                      value={city}
+                      onChange={(e)=>setcity(e.target.value)}
                       fullWidth
                       sx={{
                         '& .MuiOutlinedInput-root': {
@@ -320,6 +334,8 @@ function App() {
                       required
                       id="state"
                       placeholder="State"
+                      value={state}
+                      onChange={(e)=>setstate(e.target.value)}
                       fullWidth
                       sx={{
                         '& .MuiOutlinedInput-root': {
@@ -342,6 +358,8 @@ function App() {
                       required
                       id="zip"
                       placeholder="Postal/Zip"
+                      value={zipCode}
+                      onChange={(e)=>setzipCode(e.target.value)}
                       fullWidth
                       sx={{
                         '& .MuiOutlinedInput-root': {
@@ -364,6 +382,8 @@ function App() {
                         
                         id="country"
                         name="country"
+                        value={country}
+                        onChange={(e)=>setcountry(e.target.value)}
                         defaultValue="country"
                         
                         sx={{ width:'200px',
