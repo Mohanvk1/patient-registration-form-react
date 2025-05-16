@@ -7,6 +7,7 @@ import {
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { ThemeProvider } from '@mui/material/styles';
+import React, { useState } from 'react';
 const CustomRadio = styled(Radio)(({ theme }) => ({
     padding: 8,
     '&.MuiRadio-root': {
@@ -46,15 +47,29 @@ const CustomCheckBox = styled(Checkbox)(({ theme }) => ({
 }));
 
 function App() {
-
+  
+  const [firstName, setFirstName] = useState('');
+  const [lastName,  setLastName] =  useState('');
+  const [DateOfBirth,setDateOfBirth]= useState('');
+  const [Insurance,setInsurance]=useState('');
+  const [phone,setPhone]=useState('');
   const registerPatient = () => {
+   
   const patient = {
     id: 3,
-    name: "John Doe",
+    firstname: "John Doe",
+    lastName: "CH",
+    DateOfBirth:("10-07-1999"),
     age: 30,
     diagnosis: "Diabetes"
   };
-
+     patient.firstname=firstName
+     patient.lastName=lastName
+      patient.DateOfBirth=DateOfBirth
+     patient.Insurance=Insurance
+     patient.phone=phone
+     
+     
   fetch("http://localhost:5026/api/Patient/Register", {
     method: "POST",
     headers: {
@@ -95,6 +110,8 @@ function App() {
                       required
                       id="fname"
                       label="First"
+                      value={firstName}
+                      onChange={(e)=> setFirstName(e.target.value)}
                       variant="outlined"
                       fullWidth
                       sx={{
@@ -117,6 +134,8 @@ function App() {
                       id="lname"
                       name="last"
                       label="Last"
+                      value={lastName}
+                      onChange={(e)=> setLastName(e.target.value)}
                       variant="outlined"
                       fullWidth
                       sx={{
@@ -167,6 +186,8 @@ function App() {
                   required
                   id="Phone"
                   name="Phone"
+                  value={phone}
+                  onChange={(e)=> setPhone(e.target.value)}
                   placeholder="# # #  # # # # # # #"
                   type="tel"
                   variant="outlined"
@@ -200,6 +221,8 @@ function App() {
                   required
                   id="DOB"
                   name="dob"
+                  value={DateOfBirth}
+                   onChange={(e)=> setDateOfBirth(e.target.value)}
                   type="date"
                   InputLabelProps={{
                     shrink: true,
@@ -386,6 +409,8 @@ function App() {
                   required
                   id="Iname"
                   name="insurance_name"
+                  value={Insurance}
+                  onChange={(e)=> setInsurance(e.target.value)}
                   placeholder="Insurance Name"
                   fullWidth
                   sx={{
