@@ -117,7 +117,7 @@ function App() {
               Patient Registration Form
             </Typography>
             <Typography variant="body1" color="textSecondary">
-              Thank you for applying to our practice. Please complete this patient registration form with your information, and a doctor will contact you shortly.
+               Thank you for applying to our practice. Please complete this patient registration form with your information, and a doctor will contact you shortly. 
             </Typography>
             <hr />
         
