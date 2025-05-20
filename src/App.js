@@ -76,12 +76,7 @@ function App() {
   const registerPatient = () => {
    
   const patient = {
-    id: 3,
-    firstname: "John Doe",
-    lastName: "CH",
-    DateOfBirth:("10-07-1999"),
-    age: 30,
-    diagnosis: "Diabetes"
+   
   };
      patient.firstname=firstName
      patient.lastName=lastName
